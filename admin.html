@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - Luna Mágica</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Imagenes/Red and Yellow Catering Flat Illustrative Food Place Logo (1).png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.0.0/tsparticles.bundle.min.js"></script>
+    <script type="module" src="admin.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #000000, #000000);
+            color: rgb(255, 255, 255);
+        }
+    </style>
+
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div id="admin-section">
+        <h3>👨‍🍳 Administrador</h3>
+        
+        <!-- Sección de login -->
+        <div id="login-section">
+            <h3>🔑 Iniciar sesión</h3>
+            <form id="login-form">
+                <input type="email" id="email" placeholder="Correo electrónico" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button type="submit">Iniciar sesión</button>
+            </form>
+            <p id="error-message" style="color:red; display:none;">Correo o contraseña incorrectos.</p>
+        </div>
+        
+        <!-- Sección del administrador -->
+        <div id="admin-content" style="display:none;">
+            <button id="logout-btn">Cerrar sesión</button>
+
+            <form id="add-dish-form">
+                <input type="text" id="dish-name" placeholder="Nombre del plato" required>
+                <select id="dish-category" required>
+                    <option value="" disabled selected>Selecciona una categoría</option>
+                    <option value="Entradas">🥗 Entradas</option>
+                    <option value="Platos principales">🍝 Platos principales</option>
+                    <option value="Postres">🍰 Postres</option>
+                    <option value="Bebidas">🥤 Bebidas</option>
+                    
+                </select>
+                <input type="text" id="dish-price" placeholder="Precio" required>
+                <input type="file" id="dish-img-upload" accept="image/*" required>
+                <textarea id="dish-description" placeholder="Descripción del plato" required></textarea>
+                <button type="submit">Agregar Plato</button>
+            </form>
+    
+            <h4>Platos Disponibles</h4>
+            <div id="menu-list" class="admin"></div>
+        </div>
+    
+
+</body>
+</html>
